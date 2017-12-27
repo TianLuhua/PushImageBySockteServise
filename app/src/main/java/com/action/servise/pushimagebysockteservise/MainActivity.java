@@ -102,21 +102,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            File fileImage = new File(FileUtil.getScreenShotsName(getApplicationContext()));
-            if (!fileImage.exists()) {
-                Log.e("tlh", "fileImage.path: " + fileImage.getAbsolutePath());
-                fileImage.createNewFile();
-            }
-            FileOutputStream out = new FileOutputStream(fileImage);
-            if (out != null) {
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
-                out.flush();
-                out.close();
-                Intent media = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-                Uri contentUri = Uri.fromFile(fileImage);
-                media.setData(contentUri);
-                sendBroadcast(media);
-            }
+//            File fileImage = new File(FileUtil.getScreenShotsName(getApplicationContext()));
+//            if (!fileImage.exists()) {
+//                Log.e("tlh", "fileImage.path: " + fileImage.getAbsolutePath());
+////                fileImage.createNewFile();
+//            }
+//            FileOutputStream out = new FileOutputStream(fileImage);
+//            if (out != null) {
+//                bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+//                out.flush();
+//                out.close();
+//                Intent media = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+//                Uri contentUri = Uri.fromFile(fileImage);
+//                media.setData(contentUri);
+//                sendBroadcast(media);
+//            }
 
             Log.e("tlh", "len = " + len);
         }
